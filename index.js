@@ -10,13 +10,14 @@
         //     let warppedText = "";
         //     let currentLine = "";
 
-        //     for (let i = 0; i <= words.lenght; i++) {
+        //     for (let i = 0; i < words.lenght; i++) {
 
         //         let word = words[i];
         //         if (currentLine.length + word.length > maxCharsPerLine) {
         //             warppedText += currentLine.trim() + '\n';
+        //             currentLine = ""; 
         //         }
-        //         currentLine += word + '';
+        //         currentLine += word + ' ';
         //     }
 
         //     warppedText += currentLine.trim();
