@@ -2,31 +2,30 @@
 
         // ........................................................................
 
-        // function warptext(paragraph) {
+        function warptext(paragraph) {
 
-        //     let words = paragraph.split(" ");
+            let words = paragraph.split(" ");
 
-        //     const maxCharsPerLine = 70;
-        //     let warppedText = "";
-        //     let currentLine = "";
+            const maxCharsPerLine = 70;
+            let warppedText = "";
+            let currentLine = "";
 
-        //     for (let i = 0; i <= words.lenght; i++) {
+            for (let i = 0; i < words.length; i++) {
 
-        //         let word = words[i];
-        //         if (currentLine.length + word.length > maxCharsPerLine) {
-        //             warppedText += currentLine.trim() + '\n';
-        //         }
-        //         currentLine += word + '';
-        //     }
+                let word = words[i];
+                if (currentLine.length + word.length > maxCharsPerLine) {
+                    warppedText += currentLine.trim() + '\n';
+                    currentLine = "";
+                }
+                currentLine += word + ' ';
+            }
 
-        //     warppedText += currentLine.trim();
-        //     return warppedText;
-        // }
+            warppedText += currentLine.trim();
+            return warppedText;
+        }
 
-        // let text = warptext(par);
-        // console.log(text);
-        // let content = document.querySelector('#content');
-        // content.innerHTML = text;
+        let text = warptext(par);
+        console.log(text);
 
         // .................................................................
 
@@ -56,20 +55,20 @@
 
         // ..........................................................................
 
-        function warptext(paragraph, maxCharsPerLine) {
+        // function warptext(paragraph, maxCharsPerLine) {
 
-            const lines = [];
-            while (paragraph.length > maxCharsPerLine) {
-                let line = paragraph.substr(0, maxCharsPerLine);
-                let lastSpaceIndex = line.lastIndexOf(" ");
+        //     const lines = [];
+        //     while (paragraph.length > maxCharsPerLine) {
+        //         let line = paragraph.substr(0, maxCharsPerLine);
+        //         let lastSpaceIndex = line.lastIndexOf(" ");
 
-                line = line.substr(0, lastSpaceIndex).trim();
-                lines.push(line);
-                paragraph = paragraph.substr(lastSpaceIndex).trim();
+        //         line = line.substr(0, lastSpaceIndex).trim();
+        //         lines.push(line);
+        //         paragraph = paragraph.substr(lastSpaceIndex).trim();
 
-            }
-            lines.push(paragraph);
-            return lines.join("\n");
-        }
+        //     }
+        //     lines.push(paragraph);
+        //     return lines.join("\n");
+        // }
 
-        console.log(warptext(par,70));
+        // console.log(warptext(par,70));
